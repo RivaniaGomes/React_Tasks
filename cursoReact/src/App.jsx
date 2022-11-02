@@ -1,6 +1,6 @@
 import React, { useState} from "react"
 import './App.css'
-import Tasks from './components/index';
+import Tasks from './components/Tasks/index';
 
 
 function App() {
