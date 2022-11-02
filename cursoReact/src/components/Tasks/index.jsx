@@ -1,5 +1,6 @@
 import React from "react";
 import Task from '../Task/index';
+import "./styles.css"
 
 const Tasks = ({ tasks }) => {
     return (

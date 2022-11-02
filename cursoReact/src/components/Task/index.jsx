@@ -1,7 +1,12 @@
 import React from "react";
+import "./styles.css"
 
-const Task = ({task}) => {
-    return (<h1>{task.title}</h1>);
+function Task({ task }) {
+    return (
+        <div className="task-container">
+            {task.title}
+        </div>
+    );
 }
 
 export default Task;
