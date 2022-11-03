@@ -27,13 +27,13 @@ function App() {
         completed: false,
       },
     ];
-    setTasks(newTasks)
+    setTasks(newTasks);
   };
   
   return (
     <>
       <div className="container">
-        <AddTask />
+        <AddTask handleTaskAddition={handleTaskAddition}/>
         <Tasks tasks={tasks} />
       </div>
     </>
