@@ -1,12 +1,21 @@
 import React from "react";
-import "./styles.css"
+import { CgClose } from "react-icons/cg";
 
-function Task({ task, handleTaskClick }) {
+import "./styles.css";
+
+
+function Task({ task, handleTaskClick, handleTaskDeletion }) {
     return (
-        <div className="task-container" 
-        style={task.completed ? {borderLeft: "6px solid chartreuse"} : {}}>
-            <div className="task-title" onClick={() => handleTaskClick(task.id)}>
-            {task.title}
+        <div className="task-container"
+            style={ task.completed ? { borderLeft: "6px solid chartreuse" } : {} }>
+            <div className="task-title" onClick={ () => handleTaskClick(task.id) }>
+                { task.title }
+            </div>
+
+            <div className="buttons-container">
+                <button className="remove-task-button" onClick={ () => handleTaskDeletion(task.id) }>
+                    <CgClose />
+                </button>
             </div>
         </div>
     );
