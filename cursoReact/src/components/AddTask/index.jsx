@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import Button from './../Button/index';
 
-const AddTask = ({ handleTaskAddition }) => {
+const AddTask = ({ handleTaskAddition, handleTaskClick }) => {
     const [inputData, setInputData] = useState('')
 
     const handleInputChange = (e) => {
@@ -11,6 +11,7 @@ const AddTask = ({ handleTaskAddition }) => {
 
     const handleAddTaskClick = () => {
         handleTaskAddition(inputData);
+        setInputData("");
     };
 
     return (
@@ -24,7 +25,6 @@ const AddTask = ({ handleTaskAddition }) => {
             <div className="add-task-button-container">
                 <Button onClick={handleAddTaskClick}>Adicionar</Button>
             </div>
-
         </div>
     );
 };
