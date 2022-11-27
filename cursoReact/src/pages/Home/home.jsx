@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios, { Axios } from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 import AddTask from "./../../components/AddTask";
 import Tasks from "./../../components/Tasks/index";
-
 
 export default function home() {
   const [tasks, setTasks] = useState([
@@ -18,6 +18,16 @@ export default function home() {
       completed: true,
     },
   ]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.cypress.io/todos?limit=10"
+      );
+      setTasks(data);
+    };
+    fetchTasks();
+  }, []);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
@@ -38,7 +48,6 @@ export default function home() {
       },
     ];
     setTasks(newTasks);
-    console.log(newTasks)
   };
 
   const handleTaskDeletion = (taskId) => {
@@ -48,7 +57,7 @@ export default function home() {
   };
 
   const handleTaskDetailsClick = () => {
-    history(`/${task.title}`);
+    history(`/${tasks.title}`);
   };
 
   return (
