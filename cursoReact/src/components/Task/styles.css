@@ -13,10 +13,11 @@
   cursor: pointer;
 }
 
-.remove-task-button{
-    background-color: #444;
-    border: none;
-    font-size: 16px;
-    color: chartreuse;
+.remove-task-button,
+.see-task-details-button {
+  background-color: #444;
+  border: none;
+  font-size: 16px;
+  color: chartreuse;
+  margin: 0 5px;
 }
-
